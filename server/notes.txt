@@ -1,0 +1,23 @@
+1. Install Nodemon
+   npm i -g nodemon
+2. install 
+ 
+ express (for backend management),
+ body-parser(json),
+ bcrypt (password encription),
+ cors (cross origin request),
+ dotenv(environment variables),
+ gridfs-stream (for file upload) 
+ multer (file)
+ multer-gridfs-storage (file upload locally)
+ helmet (request safety)
+ morgan (middleware)
+ jsonwebtoken
+ mongoose
+
+ we can install the above packages by following command-
+  npm i express body-parse bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
+
+3. now we will run the node initilization command.
+   
+  npm init -y
