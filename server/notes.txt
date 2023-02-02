@@ -21,3 +21,10 @@
 3. now we will run the node initilization command.
    
   npm init -y
+
+4. add "type" : "module" in package.json file
+
+5. create index.js file
+6. import every modules, connect to express 
+
+7. create a mongoDb in Atlas, and connect it with our application.
