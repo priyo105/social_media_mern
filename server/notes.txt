@@ -31,3 +31,4 @@
 
 
 8. create AUTH.js inside a controller folder.
+9. then create a folder called models, create user Model - add schema code.
