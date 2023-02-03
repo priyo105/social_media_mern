@@ -28,3 +28,6 @@
 6. import every modules, connect to express 
 
 7. create a mongoDb in Atlas, and connect it with our application.
+
+
+8. create AUTH.js inside a controller folder.
