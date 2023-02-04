@@ -9,6 +9,7 @@ import morgan from "morgan"
 import path from "path"
 import { fileURLToPath } from "url"
 import {register} from './controllers/auth.js'
+import authRoutes from './routes/auth.js'
 
 /*    Configuration       */
 
@@ -38,10 +39,13 @@ const storage=multer.diskStorage({
 const upload= multer({storage})
 
 
-//ROUTES
+
+//ROUTES with File Upload
 
 app.post("/auth/register",upload.single("picture"), register) //the middle function is a middleware that runs before register
 
+//Routes 
+app.use("/auth",authRoutes);
 
 
 //MONGOOSE SETUP
