@@ -7,6 +7,12 @@ const UserSchema= new mongoose.Schema(
         min:2, //mininmum 2 letter
         max:50 //maximum 50 letter
       },
+      lastName:{
+        type:String,
+        required:true,
+        min:2, //mininmum 2 letter
+        max:50 //maximum 50 letter
+      },
       email:{
         type:String,
         required:true,
