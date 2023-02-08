@@ -1,0 +1,19 @@
+Setting Up of the Project
+
+
+1. npx create-react-app social_frontend
+2. installing some packages- 
+   
+npm i 
+
+   react-redux @reduxjs/toolkit
+   redux-persist          // kind of like shared preference
+   react-dropzone        // file upload and file handeling to send in the backend
+   dotenv                // for ENV file
+   formik                // for form handling and validation
+   yup                   // form validation
+   react-router-dom@6    // routes handeling
+   @mui/material @emotion/react @emotion/styled @mui/icons-material         //material UI
+  
+
+3.Import Google Font

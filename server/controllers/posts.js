@@ -80,7 +80,7 @@ export const likePost= async(req, res)=>{
    //updating the post  
    const updatedPost= await Post.findByIdAndUpdate(
     id,
-    {likes: post.liles},
+    {likes: post.likes},
     {new: true}
    )
    
