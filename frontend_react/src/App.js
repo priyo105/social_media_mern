@@ -1,4 +1,4 @@
-import { BrowserRouter,Navigate,Routes, Route } from "react-router-dom";
+import { BrowserRouter,Navigate,Routes, Route, Form } from "react-router-dom";
 import HomePage from "./views/HomePage";
 import LoginPage from "./views/LoginPage";
 import ProfilePage from "./views/profilePage";
@@ -9,10 +9,11 @@ import { createTheme } from "@mui/material/styles";
 
 import { themeSettings } from "./theme";
 import NavBar from "./views/navBar";
+import AuthForm from "./views/LoginPage/Form";
 
 function App() {
   
-  const mode= useSelector((state)=>state.mode);
+  const mode= useSelector((state)=>state.mode); // use selector gets the state from the redux
   const theme= useMemo(()=>createTheme(themeSettings(mode)), [mode])
 
   return (
@@ -21,7 +22,7 @@ function App() {
        <ThemeProvider theme={theme}>
         <CssBaseline />       
          <Routes>
-            <Route path="/" element={<NavBar />} />
+            <Route path="/" element={<LoginPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/profile/:userId" element={ <ProfilePage />} />
             
