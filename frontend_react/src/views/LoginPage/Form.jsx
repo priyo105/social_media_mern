@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "../../state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "../../components/FlexBetween";
+import Swal from 'sweetalert2'
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -76,7 +77,13 @@ const Form = () => {
 
     if (savedUser.firstName) {
       setPageType("login");
-    }
+    }else if(savedUser.error){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'User Already Exists!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })    }
   };
 
   //API CALL FOR LOGIN
@@ -98,7 +105,12 @@ const Form = () => {
       );
       navigate("/home");
     }else{
-        alert("Invalid Credentials")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Credential Error!',
+            footer: ''
+          })
     }
   };
 
