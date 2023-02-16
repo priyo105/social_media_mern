@@ -23,7 +23,7 @@ const registerSchema = yup.object().shape({
   email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
   location: yup.string().required("required"),
-  occupation: yup.string().required("required"),
+  ocupation: yup.string().required("required"),
   picture: yup.string().required("required"),
 });
 
@@ -38,7 +38,7 @@ const initialValuesRegister = {
   email: "",
   password: "",
   location: "",
-  occupation: "",
+  ocupation: "",
   picture: "",
 };
 
@@ -179,15 +179,15 @@ const Form = () => {
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
-                  label="Occupation"
+                  label="Ocupation"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.occupation}
-                  name="occupation"
+                  value={values.ocupation}
+                  name="ocupation"
                   error={
-                    Boolean(touched.occupation) && Boolean(errors.occupation)
+                    Boolean(touched.ocupation) && Boolean(errors.ocupation)
                   }
-                  helperText={touched.occupation && errors.occupation}
+                  helperText={touched.ocupation && errors.ocupation}
                   sx={{ gridColumn: "span 4" }}
                 />
                 <Box
@@ -197,7 +197,7 @@ const Form = () => {
                   p="1rem"
                 >
                   <Dropzone
-                    acceptedFiles=".jpg,.jpeg,.png"
+                    accept={"image/*"} 
                     multiple={false}
                     onDrop={(acceptedFiles) =>
                       setFieldValue("picture", acceptedFiles[0])

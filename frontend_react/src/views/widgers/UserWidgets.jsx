@@ -3,8 +3,10 @@ import{
     EditOutlined,
     LocationOnOutlined,
     WorkOutlineOutlined
+     
 } from "@mui/icons-material";
-
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Box,Typography,Divider,useTheme} from "@mui/material"
 import UserImage from "../../components/UserImage";
 import FlexBetween from "../../components/FlexBetween";
@@ -107,6 +109,7 @@ const UserWidgets=({userId,picturePath})=>{
                 </Box>
              </Box>
 
+             <Divider />
 
               {/* third row */}
 
@@ -126,7 +129,8 @@ const UserWidgets=({userId,picturePath})=>{
                  </FlexBetween>
               </Box>
 
-          
+              <Divider />
+
           {/* Fourth Row */}
 
           <Box p="1rem 0">
@@ -134,19 +138,35 @@ const UserWidgets=({userId,picturePath})=>{
               Social Profiles
             </Typography> 
 
-            <FlexBetween gap="1rem" mb="0.5rem">
-             <img src="../assets/twitter.png" alt="twitter" />
-             <Box>
-                 <Typography color={main} fontWeight="500">
+            <FlexBetween gap="0rem" mb="0.5rem">
+             <TwitterIcon ></TwitterIcon>
+               <Box mr="10rem">
+                 <Typography  color={main} fontWeight="500">
                     Twitter
                  </Typography>
 
                  <Typography color={medium}>Social Network</Typography>
-                   
-             </Box>
+                 </Box>  
+                 <EditOutlined sx={{color:main}}></EditOutlined> 
+
             </FlexBetween> 
 
-              <EditOutlined sx={{color:main}}></EditOutlined> 
+            <FlexBetween gap="0rem" mb="0.5rem">
+             <LinkedInIcon />
+               <Box mr="10rem">
+                 <Typography  color={main} fontWeight="500">
+                    Linkdin
+                 </Typography>
+
+                 <Typography color={medium}>Social Network</Typography>
+                 </Box>  
+                 <EditOutlined sx={{color:main}}></EditOutlined> 
+
+            </FlexBetween> 
+
+            
+
+             
           </Box>
 
     </WidgetWrapper>
