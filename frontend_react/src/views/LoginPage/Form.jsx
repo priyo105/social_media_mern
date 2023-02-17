@@ -199,9 +199,10 @@ const Form = () => {
                   <Dropzone
                     accept={"image/*"} 
                     multiple={false}
-                    onDrop={(acceptedFiles) =>
+                    onDrop={(acceptedFiles) =>{
+                      console.log(acceptedFiles)
                       setFieldValue("picture", acceptedFiles[0])
-                    }
+                    }}
                   >
                     {({ getRootProps, getInputProps }) => (
                       <Box
