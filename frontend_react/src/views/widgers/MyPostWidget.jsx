@@ -76,6 +76,38 @@ return (
              p="1rem"
             >
 
+              <Dropzone
+                    accept={"image/*"} 
+                    multiple={false}
+                    onDrop={(acceptedFiles) =>{
+                      console.log(acceptedFiles)
+                      setImage(acceptedFiles[0])
+                    }}
+                  >
+                    {({ getRootProps, getInputProps }) => (
+                     <FlexBetween>  
+                      <Box
+                        {...getRootProps()}
+                        border={`2px dashed ${palette.primary.main}`}
+                        p="1rem"
+                        width="100%"
+                        sx={{ "&:hover": { cursor: "pointer" } }}
+                      >
+                        <input {...getInputProps()} />
+                        {!image ? (
+                          <p>Add Image Here</p>
+                        ) : (
+                          <FlexBetween>
+                            {/* <Typography>{values.picture.name}</Typography> */}
+                            {/* <EditOutlinedIcon /> */}
+                          </FlexBetween>
+                        )}
+                      </Box>
+
+                      </FlexBetween>   
+                    )}
+                  </Dropzone>
+
             </Box>
           )}             
 
