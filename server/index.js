@@ -52,6 +52,10 @@ app.use("/auth",authRoutes);
 app.use("/user",userRoutes);
 app.use("/posts",postRoutes);
 
+//asset files
+app.use(express.static('public'))
+
+
 //MONGOOSE SETUP
 console.log(process.env.MONGO_URL)
 const PORT= process.env.PORT || 6000;
