@@ -12,7 +12,6 @@ export const register = async(req, res)=>{
         lastName,
         email,
         password,
-        picture,
         friends,
         location,
         ocupation
@@ -20,13 +19,17 @@ export const register = async(req, res)=>{
     
     const salt= await bcrypt.genSalt(); //use this to dcrypt the password
     const passwordHash=await bcrypt.hash(password,salt)
+    console.log(req)
 
+    const picture=req.file.originalname;
+
+    
     const newUser=new User({
         firstName,
         lastName,
         email,
         password: passwordHash,
-        picture,
+        picturePath:picture,
         friends,
         location,
         ocupation,

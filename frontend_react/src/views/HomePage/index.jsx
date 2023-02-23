@@ -4,6 +4,7 @@ import Navbar from "../navBar";
 import { Box } from "@mui/material";
 import UserWidgets from "../widgers/UserWidgets";
 import MyPostWidget from "../widgers/MyPostWidget"
+import PostsWidget from "../widgers/PostsWidget";
 const HomePage = ()=>{
    
   const isNonMobileScreens= useMediaQuery("(min-width:1000px)")
@@ -27,6 +28,7 @@ const HomePage = ()=>{
             mt={isNonMobileScreens ? undefined :"2rem"}>
 
            <MyPostWidget picturePath={picturePath} />   
+           <PostsWidget userId={_id} />
 
       </Box>
        

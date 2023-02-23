@@ -62,14 +62,25 @@ const Form = () => {
     console.log(values)
    
     const data=values;
-    data["picturePath"]=values.picture.path
-    console.log("formdata",data)
-    const savedUserResponse = await fetch(
+    const formData = new FormData();
+    formData.append("email", data.email);
+    formData.append("firstName", data.firstName);
+    formData.append("lastName", data.lastName);
+    formData.append("location", data.location);
+    formData.append("ocupation", data.ocupation);
+    formData.append("password", data.password);
+    if (data.picture) {
+      formData.append("picture", data.picture);
+      // formData.append("imagePath", image.name);
+    }
+
+    
+    
+      const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
       }
     );
     const savedUser = await savedUserResponse.json();
@@ -81,7 +92,7 @@ const Form = () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'User Already Exists!',
+            text: savedUser.error,
             footer: '<a href="">Why do I have this issue?</a>'
           })    }
   };
