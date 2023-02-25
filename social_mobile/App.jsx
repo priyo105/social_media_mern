@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-//importing redux
+import {
+  SafeAreaView,
+  ScrollView,
+  Text,
+  View,
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import authReducer from "./state"
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
@@ -17,11 +21,14 @@ import {
   PURGE,
   REGISTER
 } from "redux-persist"
-import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
 
 // REDUX INITIALIZATIONS 
-const persistConfig={key:"root",storage, version:1}
+const persistConfig={
+  key:"root", 
+  storage: AsyncStorage,
+ version:1
+}
 const persistedReducer=persistReducer(persistConfig,authReducer);
 
 const store= configureStore({
@@ -34,17 +41,21 @@ const store= configureStore({
     })  
 })
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistStore(store)}>  
-         <App />
-     </PersistGate>
-    </Provider>   
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+const App=()=> {
+  return ( 
+    <SafeAreaView>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistStore(store)}>  
+
+      <ScrollView>
+             <View>
+               <Text style={{textAlign:"center",marginTop:100,color:"red"}}> asdasd</Text>
+             </View>
+      </ScrollView>
+      </PersistGate>
+    </Provider> 
+    </SafeAreaView>
+  );
+}
+export default App;

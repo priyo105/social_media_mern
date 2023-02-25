@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 // this data is accessable throughout the entire application
 const initialState={
     mode:"light", //dark mode or light mode
@@ -6,6 +7,7 @@ const initialState={
     token: null,
     posts:[]
 }
+
 
 export const authSlice=createSlice({
     name:"auth",
