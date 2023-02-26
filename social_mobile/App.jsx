@@ -6,6 +6,7 @@ import {
   View,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NavigationContainer } from '@react-navigation/native';
 
 import authReducer from "./state"
 import { configureStore } from '@reduxjs/toolkit';
@@ -44,18 +45,18 @@ const store= configureStore({
 
 const App=()=> {
   return ( 
-    <SafeAreaView>
+<NavigationContainer>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistStore(store)}>  
 
       <ScrollView>
              <View>
-               <Text style={{textAlign:"center",marginTop:100,color:"red"}}> asdasd</Text>
+               <Text style={{textAlign:"center",marginTop:100,color:"red"}}> Hello</Text>
              </View>
       </ScrollView>
       </PersistGate>
     </Provider> 
-    </SafeAreaView>
+</NavigationContainer>
   );
 }
 export default App;
