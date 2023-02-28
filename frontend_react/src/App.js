@@ -10,6 +10,7 @@ import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 import NavBar from "./views/navBar";
 import AuthForm from "./views/LoginPage/Form";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function App() {
   

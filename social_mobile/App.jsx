@@ -23,6 +23,11 @@ import {
   REGISTER
 } from "redux-persist"
 import { PersistGate } from 'redux-persist/integration/react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Splash from './screens/Splash';
+import Home from './screens/Home';
+const Stack = createNativeStackNavigator();
 
 // REDUX INITIALIZATIONS 
 const persistConfig={
@@ -48,12 +53,13 @@ const App=()=> {
 <NavigationContainer>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistStore(store)}>  
-
-      <ScrollView>
-             <View>
-               <Text style={{textAlign:"center",marginTop:100,color:"red"}}> Hello</Text>
-             </View>
-      </ScrollView>
+        <Stack.Navigator>
+           <Stack.Screen name="Splash" 
+                         component={Splash}    
+                         options={{headerShown: false}} />
+           <Stack.Screen name="Home"
+                         component={Home} />
+       </Stack.Navigator>
       </PersistGate>
     </Provider> 
 </NavigationContainer>

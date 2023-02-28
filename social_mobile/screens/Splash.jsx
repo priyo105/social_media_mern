@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image,Text } from 'react-native';
 
 const Splash = ({ navigation }) => {
 
+  navigationOptions = {
+    header: null
+  }
+  
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Home');
