@@ -15,7 +15,7 @@ const Splash = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-          <Text>PicTik</Text>
+          <Text style={styles.text}>PicTik</Text>
     </View>
   );
 };
@@ -31,6 +31,13 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
   },
+  
+  text:{
+    fontSize:20,
+    color:"#00D5FA",
+    fontWeight:"bold"
+  }
+
 });
 
 export default Splash;
