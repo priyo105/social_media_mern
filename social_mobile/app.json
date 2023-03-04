@@ -1,4 +1,9 @@
 {
   "name": "social_mobile",
+  "rnpm": {
+    "assets": [
+      "./src/main/assets/fonts"
+    ]
+  },
   "displayName": "social_mobile"
 }

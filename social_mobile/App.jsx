@@ -27,6 +27,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Splash from './screens/Splash';
 import Home from './screens/Home';
+import Login from './screens/Login';
 const Stack = createNativeStackNavigator();
 
 // REDUX INITIALIZATIONS 
@@ -58,7 +59,14 @@ const App=()=> {
                          component={Splash}    
                          options={{headerShown: false}} />
            <Stack.Screen name="Home"
-                         component={Home} />
+                         component={Home} 
+                         options={{headerShown: false}}
+                         />
+
+            <Stack.Screen name="Login"
+                         component={Login} 
+                         options={{headerShown: false}}
+                         />
        </Stack.Navigator>
       </PersistGate>
     </Provider> 

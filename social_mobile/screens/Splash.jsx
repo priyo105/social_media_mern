@@ -14,15 +14,23 @@ const Splash = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <View style={styles.container}>
+   <View style={styles.container}>
+      <View >
           <Text style={styles.text}>PicTik</Text>
-    </View>
+      </View>
+
+    <Text style={{marginTop:100,justifyContent:"flex-end"}} >Developed by Adnan</Text>
+   </View> 
+  
+
+
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection:"column",
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
@@ -33,9 +41,11 @@ const styles = StyleSheet.create({
   },
   
   text:{
-    fontSize:20,
+    fontSize:30,
     color:"#00D5FA",
-    fontWeight:"bold"
+    fontWeight:"bold",
+    flex:.5,
+    fontFamily:"ArialMT"
   }
 
 });
