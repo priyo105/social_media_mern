@@ -11,7 +11,7 @@ const Home=({navigation})=>{
         
         <View style={{marginHorizontal:40,marginVertical:40,flexDirection:"row"}}>
          <RoundedButton title="Login" onPress={()=>{navigation.navigate("Login")}} />
-         <RoundedButton title="Register" bgcolor={"transparent"} textColor={"black"} />
+         <RoundedButton title="Register" onPress={()=>{navigation.navigate("Registration")}} bgcolor={"transparent"} textColor={"black"} />
         </View>
     </View>
     )

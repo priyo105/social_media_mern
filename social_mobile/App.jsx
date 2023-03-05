@@ -28,6 +28,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './screens/Splash';
 import Home from './screens/Home';
 import Login from './screens/Login';
+import Registration from './screens/Registration';
 const Stack = createNativeStackNavigator();
 
 // REDUX INITIALIZATIONS 
@@ -65,6 +66,10 @@ const App=()=> {
 
             <Stack.Screen name="Login"
                          component={Login} 
+                         options={{headerShown: false}}
+                         />
+            <Stack.Screen name="Registration"
+                         component={Registration} 
                          options={{headerShown: false}}
                          />
        </Stack.Navigator>
