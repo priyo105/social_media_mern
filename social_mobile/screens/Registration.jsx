@@ -1,7 +1,11 @@
-import {View} from "react-native"
+import {View,Text} from "react-native"
 const Registration=()=>{
   return(
-     <View></View>
+     <View>
+       <Text>Doing my coursework, cant work today</Text>
+
+
+     </View>
   )
 }
 
