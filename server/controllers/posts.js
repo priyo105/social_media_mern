@@ -61,7 +61,7 @@ export const getUserPosts =async (req, res)=>{
   } catch(err){
     res.status(404).json(err.message)
   }
-
+ console.log("bug");
 }
 
 ///UPADATE
