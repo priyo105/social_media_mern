@@ -13,6 +13,9 @@ const Login= ()=>{
           <Text style={{textAlign:"center",marginTop:0,marginHorizontal:20, fontSize:30,fontWeight:"800",color:"navy"}}>Login Here </Text>
           <Text style={{textAlign:"center",marginTop:20,marginHorizontal:60, fontSize:18,fontWeight:"800",color:"black",fontFamily:'rubik'}}>Welcome Back, Your Friends are waiting for you to Join </Text>
           
+
+      {/* main part here */}
+
           <View style={{marginTop:30}}>
             <RoundedTextField placeholder={"Email"}></RoundedTextField>
           </View>  
@@ -20,11 +23,14 @@ const Login= ()=>{
           <View style={{marginTop:30}}>
             <RoundedTextField placeholder={"Password"} secureEntry={true}></RoundedTextField>
           </View> 
-          <Text style={{textAlign:"right",marginTop:20,marginHorizontal:40, fontSize:13,fontWeight:"600",color:"navy"}}>Forgot Your Password ? </Text>
 
+          <Text style={{textAlign:"right",marginTop:20,marginHorizontal:40, fontSize:13,fontWeight:"600",color:"navy"}}>Forgot Your Password ? </Text>
           <View style={{marginTop:70,alignContent:"center", alignSelf:"center"}}>
             <RoundedButton title={"Sign In"} width={300}></RoundedButton>
           </View> 
+     {/* main part here */}
+
+
 
           <Text style={{textAlign:"center",marginTop:20,marginHorizontal:60, fontSize:13,fontWeight:"800",color:"black",fontFamily:'rubik'}}>Create new account </Text>
           
