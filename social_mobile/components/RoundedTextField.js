@@ -1,5 +1,5 @@
 import {View,Text,TextInput,StyleSheet} from "react-native"
-const RoundedTextField = ({placeholder,secureEntry,marginHorizontal})=>{
+const RoundedTextField = ({placeholder,secureEntry,marginHorizontal,onChangeText,value})=>{
   const styles = StyleSheet.create({
 
     textInput:{
@@ -18,7 +18,7 @@ const RoundedTextField = ({placeholder,secureEntry,marginHorizontal})=>{
 
     return(
         <View style={styles.textInput}>
-           <TextInput secureTextEntry={secureEntry || false} placeholder={placeholder}  />
+           <TextInput value={value} secureTextEntry={secureEntry || false} placeholder={placeholder} onChangeText={onChangeText} />
         </View>
     )
 
