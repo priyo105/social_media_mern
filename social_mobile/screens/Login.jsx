@@ -157,6 +157,7 @@ const Login = ({ handleSubmit }) => {
           /> */}
               <Text style={styles.text}>PicTik</Text>
              <Text style={{textAlign:"center",marginTop:0,marginHorizontal:20, fontSize:30,fontWeight:"800",color:"navy"}}>Login Here </Text>
+             <Text style={{textAlign:"center",marginTop:20,marginHorizontal:60, fontSize:18,fontWeight:"800",color:"black",fontFamily:'rubik'}}>Welcome Back, Your Friends are waiting for you to Join </Text>
 
            <View style={{marginTop:30}}>
              <RoundedTextField 
@@ -167,17 +168,57 @@ const Login = ({ handleSubmit }) => {
            </View>
           {touched.email && errors.email && <Text style={styles.error}>{errors.email}</Text>}
 
-        <View style={{margin:20}}>
+        <View style={{marginTop:20}}>
           <RoundedTextField 
                    placeholder={"Password"} 
                   onBlur={handleBlur('password')} 
                   value={values.password} 
                   onChangeText={handleChange('password')} />
-          {touched.password && errors.password && <Text style={styles.error}>{errors.password}</Text>}
         </View>
-          <RoundedButton title="Submit" onPress={handleSubmit} />
+        {touched.password && errors.password && <Text style={styles.error}>{errors.password}</Text>}
+         
+         <View style={{marginTop:20}}>
+          <RoundedButton  title="Submit" onPress={handleSubmit} />
+         </View> 
+            <View>
+               <Text style={{textAlign:"center",marginTop:20,marginHorizontal:60, fontSize:13,fontWeight:"800",color:"black",fontFamily:'rubik'}}>Create new account </Text>
+          
+              <Text style={{textAlign:"center",marginTop:20,marginHorizontal:60, fontSize:13,fontWeight:"800",color:"navy",fontFamily:'rubik'}}>Or continue with </Text>
+              </View>
+
+                      
+         <View style={{flexDirection:"row",marginHorizontal:100,marginTop:30}}>
+                <Ionicons
+                    testID="nextButton"
+                    name="logo-google"
+                    color="black"
+                    padding={10}
+                   backgroundColor="#d8e0ed"
+                     size={24} />
+
+                <Ionicons
+                    testID="nextButton"
+                    name="logo-facebook"
+                    color="black"
+                     marginLeft={30}
+                    padding={10}
+                    backgroundColor="#d8e0ed"
+                      size={24} />
+
+                 <Ionicons
+                     testID="nextButton"
+                     name="logo-apple"
+                    color="black"
+                    marginLeft={30}
+                   padding={10}
+                    backgroundColor="#d8e0ed"
+                      size={24} />
+
+        </View> 
         </View>
+
       )}
+            
     </Formik>
   );
 };
@@ -186,7 +227,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    marginTop:100,
     marginHorizontal: 20,
   },
   input: {

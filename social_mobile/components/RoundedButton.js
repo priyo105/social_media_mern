@@ -20,7 +20,7 @@ const RoundedButton = ({title,onPress,bgcolor,textColor,width})=>{
         })
  return (
      <View style={styles.button} >
-         <TouchableOpacity onPress={onPress}>
+         <TouchableOpacity onPress={onPress} >
                <Text style={styles.text}>{title}</Text>
          </TouchableOpacity>
 
