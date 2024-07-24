@@ -43,7 +43,7 @@ const storage = multer.diskStorage({
 
 
 //ROUTES with File Upload
-app.post("/test",(req,res)=>{res.send('Heyyyyy')});
+app.get("/test",(req,res)=>{res.send('Heyyyyy')});
 
 app.post("/auth/register",upload.single("picture"), register) //the middle function is a middleware that runs before register
 app.post("/posts",verifyToken,upload.single("picture"),createPost)
